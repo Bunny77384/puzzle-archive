@@ -1,171 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Agent Mission Stages</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: Consolas, monospace;
-      margin: 0;
-      padding: 20px;
-    }
-    .stage {
-      display: none;
-    }
-    .active {
-      display: block;
-    }
-    #controls {
-      margin-top: 20px;
-      text-align: center;
-    }
-    button {
-      background: #333;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #555;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Agent Mission Stages</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: Consolas, monospace;
+        margin: 0;
+        padding: 20px;
+      }
+      .stage {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+      #controls {
+        margin-top: 20px;
+        text-align: center;
+      }
+      button {
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stageContainer">
+      <!-- Stage 1 -->
+      <div class="stage active">
+        <h1>Welcome Agent.</h1>
+        <p>Your first mission: retrieve the access key.</p>
+        <p>Hint: “Sometimes, secrets lie in reversed reality.”</p>
 
-<div id="stageContainer">
+        <!-- begin-log -->
+        <!-- system-init: true -->
+        <!-- user: player_01 -->
+        <!-- secure-id: 09183-xyz -->
+        <!-- stage: 1 -->
+        <!-- encoded-msg: 90Xez@ssap -->
+        <!-- log-end -->
 
-  <!-- Stage 1 -->
-  <div class="stage active">
-    <h1>Welcome Agent.</h1>
-    <p>Your first mission: retrieve the access key.</p>
-    <p>Hint: “Sometimes, secrets lie in reversed reality.”</p>
+        <script>
+          const password = atob("d2FybmluZzEyMw=="); // "warning123"
+          console.log("Access Denied");
+        </script>
+      </div>
 
-    <div class="noise">123fake</div>
-    <div class="noise">NotHere098</div>
+      <!-- Stage 2 -->
+      <div class="stage">
+        <h1>Welcome Back, Agent.</h1>
+        <p>The shadows hold the truth, but not as they seem.</p>
+        <p>Hint: “Reflections may correct the distorted.”</p>
 
-    <!-- begin-log -->
-    <!-- system-init: true -->
-    <!-- user: player_01 -->
-    <!-- secure-id: 09183-xyz -->
-    <!-- stage: 1 -->
-    <!-- encoded-msg: 90Xez@ssap -->
-    <!-- log-end -->
+        <!-- --BEGIN-ECHO-- -->
+        <!-- data-packet: 321tn0m@drowssap -->
+        <!-- echo-channel: 4558:enabled -->
+        <!-- trace-flag: false -->
+        <!-- --END-ECHO-- -->
+
+        <script>
+          function unusedDecode(str) {
+            return str
+              .split("")
+              .map((c) => String.fromCharCode(c.charCodeAt(0) + 1))
+              .join("");
+          }
+
+          const accessOverride = btoa("redherring");
+          console.warn("System Unstable");
+        </script>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="stage">
+        <h1>Agent, you’ve intercepted a corrupted transmission.</h1>
+        <p>Hint: “Fragments form the truth when placed in sequence.”</p>
+
+        <!-- signal-frag-1: p4ss -->
+        <!-- trace-id: 777x -->
+        <!-- signal-frag-3: ector -->
+        <!-- deprecated: true -->
+        <!-- signal-frag-2: r3d_d -->
+        <!-- internal-ref: 9982 -->
+
+        <script>
+          const tempKey = atob("bG9zdGZpbGU="); // "lostfile"
+          console.error("Decryption failed: Missing fragments.");
+        </script>
+      </div>
+
+      <!-- Stage 4 -->
+      <div class="stage">
+        <h1>Decrypt the Silence</h1>
+        <p>
+          You’ve reached the gate. The key is within this file — but not in the
+          usual form.
+        </p>
+
+        <script>
+          let fakeCode = "tryThisInstead";
+          console.warn("You're looking in the wrong place 👀");
+        </script>
+      </div>
+
+      <!-- Stage 5 -->
+      <div class="stage">
+        <h1>Echo Layer</h1>
+        <p>
+          The answer is not displayed openly — but it still exists somewhere in
+          the page.
+        </p>
+        <p>
+          Hint: "Look for clues in the page’s hidden elements, where secrets can
+          be encoded in plain sight."
+        </p>
+
+        <p class="secret"></p>
+
+        <script>
+          console.log("System status: Secure");
+        </script>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div id="controls">
+      <button onclick="prevStage()">Previous</button>
+      <button onclick="nextStage()">Next</button>
+    </div>
 
     <script>
-      const password = atob("d2FybmluZzEyMw=="); // "warning123"
-      console.log("Access Denied");
-    </script>
-  </div>
+      let currentStage = 0;
+      const stages = document.querySelectorAll(".stage");
 
-  <!-- Stage 2 -->
-  <div class="stage">
-    <h1>Welcome Back, Agent.</h1>
-    <p>The shadows hold the truth, but not as they seem.</p>
-    <p>Hint: “Reflections may correct the distorted.”</p>
-
-    <span class="camouflage">NothingToSee</span>
-    <span class="camouflage">shadow_agent_404</span>
-
-    <!-- --BEGIN-ECHO-- -->
-    <!-- data-packet: 321tn0m@drowssap -->
-    <!-- echo-channel: 4558:enabled -->
-    <!-- trace-flag: false -->
-    <!-- --END-ECHO-- -->
-
-    <script>
-      function unusedDecode(str) {
-        return str
-          .split("")
-          .map((c) => String.fromCharCode(c.charCodeAt(0) + 1))
-          .join("");
+      function showStage(index) {
+        stages.forEach((stage) => stage.classList.remove("active"));
+        stages[index].classList.add("active");
       }
 
-      const accessOverride = btoa("redherring");
-      console.warn("System Unstable");
+      function nextStage() {
+        currentStage = (currentStage + 1) % stages.length;
+        showStage(currentStage);
+      }
+
+      function prevStage() {
+        currentStage = (currentStage - 1 + stages.length) % stages.length;
+        showStage(currentStage);
+      }
     </script>
-  </div>
-
-  <!-- Stage 3 -->
-  <div class="stage">
-    <h1>Agent, you’ve intercepted a corrupted transmission.</h1>
-    <p>Hint: “Fragments form the truth when placed in sequence.”</p>
-
-    <div class="phantom">ghost_data</div>
-
-    <!-- signal-frag-1: p4ss -->
-    <!-- trace-id: 777x -->
-    <!-- signal-frag-3: ector -->
-    <!-- deprecated: true -->
-    <!-- signal-frag-2: r3d_d -->
-    <!-- internal-ref: 9982 -->
-
-    <script>
-      const tempKey = atob("bG9zdGZpbGU="); // "lostfile"
-      console.error("Decryption failed: Missing fragments.");
-    </script>
-  </div>
-
-  <!-- Stage 4 -->
-  <div class="stage">
-    <h1>Decrypt the Silence</h1>
-    <p>You’ve reached the gate. The key is within this file — but not in the usual form.</p>
-
-    <div id="not-a-clue">Ignore me</div>
-
-    <p class="invisible">Access Code: openSesame420</p>
-
-    <script>
-      let fakeCode = "tryThisInstead";
-      console.warn("You're looking in the wrong place 👀");
-    </script>
-  </div>
-
-  <!-- Stage X -->
-  <div class="stage">
-    <h1>Stage X: Echo Layer</h1>
-    <p>The answer is not displayed openly — but it still exists somewhere in the page.</p>
-    <p>Hint: "Look for clues in the page’s hidden elements, where secrets can be encoded in plain sight."</p>
-
-    <div class="hidden">Red herring</div>
-    <p class="secret"></p>
-
-    <script>
-      console.log("System status: Secure");
-    </script>
-  </div>
-
-</div>
-
-<!-- Controls -->
-<div id="controls">
-  <button onclick="prevStage()">Previous</button>
-  <button onclick="nextStage()">Next</button>
-</div>
-
-<script>
-  let currentStage = 0;
-  const stages = document.querySelectorAll('.stage');
-
-  function showStage(index) {
-    stages.forEach(stage => stage.classList.remove('active'));
-    stages[index].classList.add('active');
-  }
-
-  function nextStage() {
-    currentStage = (currentStage + 1) % stages.length;
-    showStage(currentStage);
-  }
-
-  function prevStage() {
-    currentStage = (currentStage - 1 + stages.length) % stages.length;
-    showStage(currentStage);
-  }
-</script>
-
-</body>
+  </body>
 </html>
