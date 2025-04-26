@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A cryptic puzzle game with hidden clues and codes across stages. Discover all access keys in one place." />
+  <meta name="keywords" content="puzzle, hidden clues, HTML secrets, reverse code, cryptography, access keys, hidden data" />
+  <meta name="author" content="AgentZero" />
+  <title>The Puzzle Archive: All Access Keys</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #cfcfcf;
+      font-family: Consolas, monospace;
+      padding: 20px;
+    }
+    .stage {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px dashed #444;
+    }
+    .hidden {
+      display: none;
+    }
+    .secret::after {
+      content: "invisicode42";
+    }
+    .invisible {
+      color: #0f0f0f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The Puzzle Archive</h1>
+  <p>All secrets revealed. Decrypt each stage below to find your way through.</p>
+
+  <div class="stage" id="stage-1">
+    <h2>Stage 1: Obscured Truth</h2>
+    <p>Hint: “Sometimes, secrets lie in reversed reality.”</p>
+    <p><strong>Clue:</strong> 90Xez@ssap → <strong>Key:</strong> <code>pass@zeX09</code></p>
+  </div>
+
+  <div class="stage" id="stage-2">
+    <h2>Stage 2: Reflected Shadows</h2>
+    <p>Hint: “Reflections may correct the distorted.”</p>
+    <p><strong>Clue:</strong> 321tn0m@drowssap → <strong>Key:</strong> <code>password@mon1t123</code></p>
+  </div>
+
+  <div class="stage" id="stage-3">
+    <h2>Stage 3: Fragmented Signal</h2>
+    <p>Hint: “Fragments form the truth when placed in sequence.”</p>
+    <ul>
+      <li>signal-frag-1: <code>p4ss</code></li>
+      <li>signal-frag-2: <code>r3d_d</code></li>
+      <li>signal-frag-3: <code>ector</code></li>
+    </ul>
+    <p><strong>Key:</strong> <code>p4ssr3d_dector</code></p>
+  </div>
+
+  <div class="stage" id="stage-4">
+    <h2>Stage 4: The Vanishing Key</h2>
+    <p>Hidden in plain sight using invisible styling.</p>
+    <p class="invisible">Access Code: openSesame420</p>
+    <p><strong>Key:</strong> <code>openSesame420</code></p>
+  </div>
+
+  <div class="stage" id="stage-x">
+    <h2>Stage X: Echo Layer</h2>
+    <p>Using pseudo-element ::after to hide the key visually.</p>
+    <p class="secret"></p>
+    <p><strong>Key:</strong> <code>invisicode42</code></p>
+  </div>
+
+  <hr />
+  <h2>🔐 Final Access Keys Summary:</h2>
+  <ul>
+    <li>pass@zeX09</li>
+    <li>password@mon1t123</li>
+    <li>p4ssr3d_dector</li>
+    <li>openSesame420</li>
+    <li>invisicode42</li>
+  </ul>
+
+  <p>Share this archive with fellow agents, but be wary of watchers.</p>
+
+</body>
+</html>
